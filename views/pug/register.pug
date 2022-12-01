@@ -1,0 +1,38 @@
+html
+    head
+        include includes/meta.pug
+        link(rel='stylesheet', href='/css/style.css')
+        title Registration
+    body.centered
+        .container.centered
+            .signup-row.row.centered
+                .logo-holder
+                    img.logo(src='/app-images/logo.png')
+                h1.app-title.white-text Socialcom
+                form(action='/register' method='post' class='signup-form form centered')
+                    p.white-text.form-description Signup now and meet awesome people around the world
+                    label(for='username' class='input-holder')
+                        include ../icons/user-icon.html
+                        input(
+                            type='text' 
+                            id='username' 
+                            name='username' 
+                            class='login-input' 
+                            placeholder='Enter your username' 
+                            required
+                        )
+                    label(for='password' class='input-holder')
+                        include ../icons/password-icon.html
+                        input(
+                            type='password' 
+                            id='password' 
+                            name='password' 
+                            class='login-input' 
+                            placeholder='Enter your password' 
+                            required
+                        )
+                    p.error-msg= errorMsg
+                    button.login Signup
+                p.page-anchor.white-text Already have an account? 
+                    a(href='/') Login
+                    

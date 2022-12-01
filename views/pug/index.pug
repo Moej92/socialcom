@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        include includes/meta.pug
+        link(rel='stylesheet', href='/css/style.css')
+        title SocialCom
+    body.centered
+        .container.centered
+
+            .login-row.row.centered
+                .logo-holder 
+                    img.logo(src='/app-images/logo.png')
+                h1.app-title.white-text Socialcom
+                form(action='/login' method='post' class='login-form form centered')
+                    p.white-text.form-description Connect with friends and the world around you
+                    label(for='username' class='input-holder')
+                        include ../icons/user-icon.html
+                        input(
+                            type='text' 
+                            id='username' 
+                            name='username' 
+                            class='login-input' 
+                            value= username
+                            placeholder='Enter your username' 
+                            required
+                        )
+                    label(for='password' class='input-holder')
+                        include ../icons/password-icon.html
+                        input(
+                            type='password' 
+                            id='password' 
+                            name='password' 
+                            class='login-input' 
+                            placeholder='Enter your password' 
+                            required
+                        )
+                    p.error-msg= errorMsg
+                    button.login Login
+                p.page-anchor.white-text Don't have an account? 
+                    a(href='/register') Sign up
+
+            .images-row.row
+                .img-holder 
+                    img(src='/app-images/social-img.png')

@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,600&display=swap');
+/* font-family: 'Berkshire Swash', cursive; */
+/* font-family: 'Roboto Flex', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 20px;
+    font-family: 'Roboto Flex', sans-serif;
+    --white-color: #FCFBF8;
+    --dark-color: #17395a;
+    --orangered-color: #C24229;
+    --orange-color: #EFB758;
+    background-image: url('/app-images/front-page-background.png');
+    background-size: cover;
+    padding: 2em 0;
+}
+
+.white-text {
+    color: var(--white-color);
+}
+
+.container, .login-row, .login-form, .signup-row, .signup-form {
+    flex-direction: column;   
+}
+
+.container {
+    align-items: stretch;
+}
+
+.row {
+    padding: 1em;
+}
+
+.logo {
+    width: 110px;
+}
+
+.app-title {
+    font-family: 'Berkshire Swash', cursive;
+    letter-spacing: 2px;
+}
+
+.form {
+    max-width: 90%;
+}
+
+.form-description {
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 2em 0 0.7em;
+}
+
+.input-holder, .login-input, .login {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-input, .login {
+    padding: 0.8em 0.4em;
+    margin: 0.5em 0;
+    font-size: 1.1rem;
+    font-family: 'Roboto Flex', sans-serif;
+    border-radius: 10px;
+    border: 0;
+    color: var(--white-color);
+}
+
+.login-input {
+    padding-left: 2.4em;
+    background-color: var(--dark-color);
+    width: 100%;
+}
+
+.login-input:focus, .login {
+    outline: 0;
+}
+
+.login-input:focus {
+    box-shadow: inset 0px 0px 2px 2px var(--orange-color);
+}
+
+.input-holder svg {
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    width: 18px;
+    color: white;
+    z-index: 2;
+}
+
+.error-msg {
+    color: var(--orangered-color);
+    padding-bottom: 0.5em;
+}
+
+.login {
+    background-color: var(--orange-color);
+    cursor: pointer;
+    border: 0;
+    font-weight: bold;
+    box-shadow: 0px 3px 5px rgb(61, 61, 61);
+    letter-spacing: 2px;
+}
+
+.login:hover, .login:focus {
+    background-color: var(--white-color);
+    color: var(--orange-color);
+}
+
+.page-anchor {
+    margin-top: 0.5em;
+    color: var(--white-color);
+    padding: 0 1em;
+    border-radius: 20px;
+    font-size: 1.1rem;
+}
+
+.page-anchor a {
+    color: var(--orange-color);
+    margin-left: 0.3em;
+}
+
+.img-holder {
+    max-width: 700px;
+}
+
+.img-holder img {
+    width: 100%;
+}
+
+@media(min-width: 1200px) {
+    .container {
+        flex-direction: row;
+    }
+    
+    .row {
+        width: 50%;
+    }
+
+    .signup-row {
+        width: unset;
+    }
+}

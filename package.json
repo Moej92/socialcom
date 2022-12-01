@@ -1,0 +1,34 @@
+{
+  "name": "socialcom",
+  "version": "1.0.0",
+  "description": "social network",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mongodb": "^4.9.1",
+    "mongoose": "^6.6.5",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "scripts": {
+    "watch": "nodemon"
+  },
+  "keywords": [
+    "[social",
+    "app",
+    "chat]"
+  ],
+  "author": "moej",
+  "license": "ISC"
+}

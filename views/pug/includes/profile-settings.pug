@@ -1,0 +1,16 @@
+form(action='/settings/profile-settings/change-avatar' method='post' class='settings-form' enctype='multipart/form-data')    
+    h3 Change Avatar
+    img(src= avatar class='current-avatar')
+    .change-inputs.avatar-change-inputs
+        input(type='file' id='upload-avatar' name='upload_avatar' class='file-input update-input' required)
+        button(class='update-btn update-avatar-btn') Update
+    p.errMsg= fileErr
+
+form(action='/settings/profile-settings/add-socialmedia' method='post' class='settings-form')
+    h3 Add Social media links
+    .change-inputs.socialmedia-inputs
+        input(type='text' name='fb' class='update-input' value= social_media ? social_media.fb : '' placeholder='add facebook url')
+        input(type='text' name='insta' class='update-input' value= social_media ? social_media.insta : '' placeholder='add instagram url')
+        input(type='text' name='twitter' class='update-input' value= social_media ? social_media.twitter : '' placeholder='add twitter url')
+        button(class='update-btn ') Update
+    p.errMsg= linkErr

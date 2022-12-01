@@ -1,0 +1,82 @@
+doctype html
+html
+    head
+        include includes/meta.pug
+        link(rel='stylesheet' href='/css/header.css')
+        link(rel='stylesheet', href='/css/profile.css')
+        title= authenticated_username
+    body
+        include includes/header.pug
+        if profileData
+            .profile-container
+                .info-section
+                    .avatar-holder 
+                        img.profile-avatar(src= profileData.avatar)
+                    h2.profile-username= profileData.username
+                    p.profile-bio Hey there am using socialcom
+                    .profile-actions
+                        div.profile-action(tabindex='0')
+                                i.action-icon
+                                    include ../icons/share-icon.html
+                                span.action-name Share profile 
+                        - var profileStatus = profileData.profileStatus
+                        if profileStatus === 'user profile' 
+                            a.profile-action(href='#')
+                                i.action-icon 
+                                    include ../icons/find-friend-icon.html
+                                span.action-name Find friend
+                            a.profile-action(href='/settings/edit-profile')
+                                i.action-icon 
+                                    include ../icons/edit-profile-icon.html
+                                span.action-name Edit profile
+                        else 
+                            form(method='POST' class='request-form')
+                                input.n(type='hidden' name='main_username' value= main_username)
+                                input.n(type='hidden' name='profile_username' value= profileData.username)
+
+                                if profileStatus === 'friend profile'
+                                    .profile-action(tabindex='0')
+                                        i.action-icon.friend.popup-btn
+                                            .popup
+                                                input(type='submit' class='popup-element' value='unfriend' formaction='/request/remove-friend')
+                                            include ../icons/friend-icon.html
+                                        span.action-name Friend
+                                    a.profile-action(href="#")
+                                        i.action-icon 
+                                            include ../icons/message-icon.html 
+                                        span.action-name Send message
+                                
+                                else if profileStatus === 'non friend profile'
+                                    .profile-action(tabindex='0')
+                                        i.action-icon.action.add-friend
+                                            include ../icons/add-friend-icon.html
+                                        span.action-name Add friend
+
+                                else if profileStatus === 'friend request profile'
+                                    .profile-action(tabindex='0')
+                                        i.action-icon.action.cancel-request 
+                                            include ../icons/cancel-friend-request-icon.html
+                                        span.action-name Cancel request 
+
+                                else if profileStatus === 'received friend request profile'
+                                    div.profile-action(tabindex='0')
+                                        i.action-icon.action.confirm-request 
+                                            include ../icons/confirm-friend-request-icon.html
+                                        span.action-name Confirm request
+                                    div.profile-action(tabindex='0')
+                                        i.action-icon.action.reject-request 
+                                            include ../icons/cancel-friend-request-icon.html
+                                        span.action-name Reject request
+
+                .friends-section 
+                    .section-top-row 
+                        h2.section-title Friends 
+                            span.friend-count (200)
+                        a.all-friends(href='#') see all friends
+
+
+                .suggested-section
+        else 
+            h2 No Such Profile 
+        script(src='/javascript/client-profile.js') 
+                

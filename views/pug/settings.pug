@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='/css/profile.css')
+        title profile
+    body
+        .container
+            include ../includes/profile-header.pug
+            .settings
+                h1.title Settings
+                .tabs
+                    a.account-settings-tab.tab(href='/settings/account-settings') Account Settings
+                    a.profile-settings-tab.tab(href='/settings/profile-settings') Profile Settings
+                    if tab === 'profile-settings'
+                        include ../includes/profile-settings.pug
+                    else
+                        include ../includes/account-settings.pug
+        
+        script(src='/javascript/client-profile.js')
+            

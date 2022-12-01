@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,600&display=swap');
+/* font-family: 'Berkshire Swash', cursive; */
+/* font-family: 'Roboto Flex', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white-color: #FCFBF8;
+    --dark-color: #17395a;
+    --orangered-color: #C24229;
+    --dark-gray-color: #464545;
+    --gray-color: #f2f2f2;
+}
+
+header, .nav-icons {
+    display: flex
+}
+
+header {
+    justify-content: space-between;
+    background-color: var(--dark-color);
+    max-width: 1000px;
+    margin: 0 auto;
+    color: var(--white-color);
+}
+
+.logo-holder {
+    padding: 0.5em;
+    padding-left: 1em
+}
+
+.logo {
+    width: 30px;
+}
+
+nav {
+    width: 180px;
+    padding-right: 1em;
+}
+
+.nav-icons {
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-icon {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.7rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.nav-icon:hover,
+.nav-icon:focus,
+.nav-link:focus {
+    background-color: var(--gray-color);
+    border: 0;
+    outline: 0;
+    color: var(--dark-color);
+}
+
+.nav-icon:focus-within > .nav-list {
+    display: block;
+}
+
+.nav-link {
+    margin-top: 6px;
+    border-radius: 10px;
+}
+
+.nav-list {
+    position: absolute;
+    width: 300px;
+    /* height: 400px; */
+    background-color: var(--gray-color);
+    top: 50px;
+    right: 1px;
+    display: none;
+    color: var(--dark-gray-color);
+    padding: 1em 0.5em 0.5em;
+    box-shadow: 0px 0px 3px var(--dark-gray-color);
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 1rem;
+}
+
+.show-list {
+    display: block;
+}
+
+.list-link, .main-user {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.main-user {
+    border-bottom: 1px solid var(--dark-gray-color);
+    margin-bottom: 1em;
+}
+
+.main-username {
+    margin-left: 0.5em;
+}
+
+.main-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.list-link:hover, .main-user:hover {
+    background-color: var(--white-color);
+    box-shadow: inset 0px 0px 3px var(--dark-gray-color);
+    border-radius: 10px;
+}
+
+.list-link svg {
+    color: var(--dark-color);
+    width: 60px;
+}
+
+

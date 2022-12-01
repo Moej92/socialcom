@@ -1,0 +1,25 @@
+header 
+    .logo-holder
+        a(href='/profile')
+            img.logo(src='/app-images/logo.png') 
+    nav
+        ul.nav-icons 
+            li.nav-icon
+                a.nav-link(href='/chat')
+                    include ../../icons/chat-icon.html 
+            li.nav-icon(tabindex=0)
+                include ../../icons/notification-icon.html
+                .nav-list
+            li.nav-icon(tabindex=0)
+                include ../../icons/user-icon.html
+                .nav-list
+                    a.main-user(href='/profile')   
+                        img.main-avatar(src= main_avatar)
+                        h3.main-username= main_username
+                    a.settings.list-link(href='/settings')
+                        include ../../icons/settings-icon.html
+                        span Settings
+                    a.logout.list-link(href='/logout')
+                        include ../../icons/logout-icon.html
+                        span Logout
+                
